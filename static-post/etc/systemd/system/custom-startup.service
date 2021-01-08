@@ -1,0 +1,13 @@
+[Unit]
+Before=network.target
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "/usr/local/bin/custom-startup.sh"
+StandardOutput=file:/var/log/custom-startup.log
+StandardError=file:/var/log/custom-startup.log
+RemainAfterExit=yes
+
+[Install]
+WantedBy=network.target

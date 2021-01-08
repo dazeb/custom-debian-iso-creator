@@ -1,0 +1,2 @@
+deb http://${server_address}/debian ${release} non-free contrib
+deb-src http://${server_address}/debian ${release} non-free contrib
