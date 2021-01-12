@@ -52,6 +52,8 @@ printf "${password}\n${password}\n" | passwd ${user}
 passwd -l root
 EOF
 
+chroot ${HOME}/LIVE_BOOT/chroot /bin/bash </root/config/chroot-commands.bash
+
 mkdir -p ${HOME}/LIVE_BOOT/chroot/home/${user}/.config/openbox
 cat << EOF > ${HOME}/LIVE_BOOT/chroot/home/${user}/.config/openbox/autostart
 xautolock -time 1 -locker "i3lock" &

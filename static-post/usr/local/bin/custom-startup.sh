@@ -4,8 +4,6 @@ set -xe
 
 date
 
-firewall-offline-cmd --remove-service=ssh
-
 id=$(cat /etc/machine-id)
 name=$(printf "${id}" | head -c8)
 hostnamectl set-hostname "${name}"
