@@ -2,16 +2,19 @@
 
 set -e
 
-docker build . -t williamhaley/custom-debian-builder
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+docker build "${SCRIPT_DIR}/lib" -t williamhaley/custom-debian-builder
 
 docker run \
-    --rm \
-    -it \
-    -v `pwd`/output:/output \
-    -v `pwd`/config:/root/config:ro \
-    -v `pwd`/lib:/root/lib:ro \
-    -v `pwd`/generate.sh:/root/generate.sh:ro \
-    -v `pwd`/static-pre:/root/static-pre:ro \
-    -v `pwd`/static-post:/root/static-post:ro \
-    williamhaley/custom-debian-builder \
-    /bin/bash
+  --rm \
+  -it \
+  -v "${SCRIPT_DIR}/output":/output \
+  -v "${SCRIPT_DIR}/config.yaml":/app/config.yaml:ro \
+  -v "${SCRIPT_DIR}/lib/scripts":/app/scripts:ro \
+  -v "${SCRIPT_DIR}/lib/standard-files":/app/standard-files:ro \
+  -v "${SCRIPT_DIR}/lib/generate.py":/app/generate.py:ro \
+  -v "${SCRIPT_DIR}/custom-system-files":/app/custom-system-files:ro \
+  -v "${SCRIPT_DIR}/custom-user-files":/app/custom-user-files:ro \
+  williamhaley/custom-debian-builder \
+  /bin/bash

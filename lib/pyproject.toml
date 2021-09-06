@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "custom-debian-iso-creator"
+version = "0.1.0"
+description = ""
+authors = ["Will <willhy@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pip = "^21.0.1"
+PyYAML = "^5.4.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

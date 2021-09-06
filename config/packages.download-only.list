@@ -1,2 +1,0 @@
-# These firmware installs fail if hardware doesn't align.
-firmware-b43-installer firmware-ipw2x00

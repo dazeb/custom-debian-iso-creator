@@ -4,17 +4,26 @@ Scripts I use for Debian home WiFi penetration testing, deploying/downloading Li
 
 See [Create a Custom Debian Live Environment (CD or USB)](https://willhaley.com/blog/custom-debian-live-environment/) for further discussion.
 
+## Run
+
+Copy the `sample-config.yaml` to `config.yaml` and update as needed.
+
 ```
-# Build the docker image and enter it
+# Build the docker image, run it, and start a shell.
 ./run.sh
 ```
 
 ```
-# Generate ISO
-docker:$ ./generate.sh
+# Generate ISO.
+docker:$ ./generate.py
 ```
 
-# Utilities
+## Customization
+
+* `custom-system-files` add any files here in the desired output directory stucture (e.g. `custom-system-files/etc/whatever/whatever.conf`). These files will be copied as `root` before `apt` is run in the `chroot` environment.
+* `custom-user-files` add any files here in the desired output directory structure (e.g. `custom-user-files/home/myuser/file.txt`). These filles will be copied as the `<user>` as defined in `config.yaml` and will be copied after `apt` has run in the `chroot` and the user account was created.
+
+## Utilities
 
 Some of the installed applications (transmission-gtk for BitTorrent, reaver, aircrack, hashcat, etc.) in this repo may raise a few eyebrows. There is nothing wrong with using these tools for research purposes.
 

@@ -1,3 +1,0 @@
-# Note that network-manager *also* randomizies mac addresses for WiFi scanning,
-# which is confusing.
-ACTION=="add", SUBSYSTEM=="net", RUN+="/bin/bash -c '/usr/local/bin/mac.sh $name >> /var/log/mac.$name.log 2>&1'"

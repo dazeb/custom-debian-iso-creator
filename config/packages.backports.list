@@ -1,2 +1,0 @@
-# iptables 1.8.2 is busted for Debian and firewalld. Install from backports.
-iptables
