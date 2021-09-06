@@ -1,6 +1,6 @@
 debian:
   # You may have to change your package list depending on the Debian variant.
-  release: buster
+  release: bullseye
   apt:
     # https://www.debian.org/mirror/list
     server_address:
@@ -8,14 +8,13 @@ debian:
     # Any extra package lists beyond the standard apt repositories.
     lists:
       backports: |
-        deb http://ftp.us.debian.org/debian buster-backports main non-free contrib
-        deb-src http://ftp.us.debian.org/debian buster-backports main non-free contrib
+        deb http://ftp.us.debian.org/debian bullseye-backports main non-free contrib
+        deb-src http://ftp.us.debian.org/debian bullseye-backports main non-free contrib
       extras: |
-        deb http://ftp.us.debian.org/debian buster non-free contrib
-        deb-src http://ftp.us.debian.org/debian buster non-free contrib
+        deb http://ftp.us.debian.org/debian bullseye non-free contrib
+        deb-src http://ftp.us.debian.org/debian bullseye non-free contrib
       security: |
-        deb http://security.debian.org/debian-security buster/updates main contrib non-free
-        deb-src http://security.debian.org/debian-security buster/updates main contrib non-free
+        # Nothing yet
   packages:
     standard: >
       linux-image-amd64
@@ -25,10 +24,9 @@ debian:
       curl openssh-client sudo firewalld
       openbox lightdm xserver-xorg-core xserver-xorg xinit xterm i3lock xautolock
       netcat socat nmap screen telnet ser2net can-utils
-      inetutils-ping thunar network-manager nano less iceweasel gnome-screensaver
+      inetutils-ping thunar network-manager nano less firefox-esr gnome-screensaver
       coreutils gparted testdisk pciutils
-      torbrowser-launcher
-      firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree amd64-microcode intel-microcode firmware-iwlwifi firmware-realtek firmware-ralink firmware-brcm80211 firmware-bnx2x firmware-atheros firmware-ath9k-htc firmware-ath9k-htc-dbgsym
+      firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree amd64-microcode intel-microcode firmware-iwlwifi firmware-realtek firmware-ralink firmware-brcm80211 firmware-bnx2x firmware-atheros firmware-ath9k-htc
       pixiewps aircrack-ng reaver wireshark tshark transmission-gtk hashcat john john-data wamerican-insane
       xfce4-terminal git rsync geany patch python2 python3 nginx vim unzip build-essential git-lfs
     # Download these to the live environment, but don't install them.
@@ -36,8 +34,7 @@ debian:
       # These firmware installs fail if hardware doesn't align.
       firmware-b43-installer firmware-ipw2x00
     backports: >
-      # iptables 1.8.2 is busted for Debian and firewalld. Install from backports.
-      iptables
+      # Nothing yet
 user:
   name: myuser
   password: password

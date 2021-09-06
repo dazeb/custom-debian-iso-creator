@@ -22,7 +22,7 @@ apt update
 # https://debian-handbook.info/browse/stable/sect.package-meta-information.html#sidebar.questions-conffiles
 apt install -y --no-install-recommends -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" ${CONFIG_PACKAGES_STANDARD}
 apt install -y --no-install-recommends -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" --download-only ${CONFIG_PACKAGES_DOWNLOAD_ONLY}
-apt -t buster-backports install -y --no-install-recommends -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" ${CONFIG_PACKAGES_BACKPORTS}
+apt -t bullseye-backports install -y --no-install-recommends -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" ${CONFIG_PACKAGES_BACKPORTS}
 
 useradd -m -s /bin/bash -G sudo ${CONFIG_USER}
 printf "${CONFIG_PASSWORD}\n${CONFIG_PASSWORD}\n" | passwd ${CONFIG_USER}

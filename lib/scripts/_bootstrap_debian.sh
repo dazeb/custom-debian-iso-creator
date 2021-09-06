@@ -2,6 +2,8 @@
 
 set -e
 
+rm -r "${HOME}/LIVE_BOOT/chroot"
+
 debootstrap \
   --arch=amd64 \
   --variant=minbase \
