@@ -25,7 +25,7 @@ debian:
       openbox lightdm xserver-xorg-core xserver-xorg xinit xterm i3lock xautolock
       netcat socat nmap screen telnet ser2net can-utils
       inetutils-ping thunar network-manager nano less firefox-esr gnome-screensaver
-      coreutils gparted testdisk pciutils
+      coreutils fdisk gparted cryptsetup testdisk pciutils
       firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree amd64-microcode intel-microcode firmware-iwlwifi firmware-realtek firmware-ralink firmware-brcm80211 firmware-bnx2x firmware-atheros firmware-ath9k-htc
       pixiewps aircrack-ng reaver wireshark tshark transmission-gtk hashcat john john-data wamerican-insane
       xfce4-terminal git rsync geany patch python2 python3 nginx vim unzip build-essential git-lfs

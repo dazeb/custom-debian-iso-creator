@@ -18,7 +18,7 @@ Copy the `sample-config.yaml` to `config.yaml` and update as needed.
 docker:$ ./generate.py
 ```
 
-## Customization
+## Custom Files
 
 * `custom-system-files` add any files here in the desired output directory stucture (e.g. `custom-system-files/etc/whatever/whatever.conf`). These files will be copied as `root` before `apt` is run in the `chroot` environment.
 * `custom-user-files` add any files here in the desired output directory structure (e.g. `custom-user-files/home/myuser/file.txt`). These filles will be copied as the `<user>` as defined in `config.yaml` and will be copied after `apt` has run in the `chroot` and the user account was created.

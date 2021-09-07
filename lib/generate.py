@@ -4,7 +4,6 @@ import os
 import subprocess
 import sys
 import yaml
-from string import Template
 
 with open("/app/config.yaml", "r") as config_file:
   config = yaml.safe_load(config_file)
