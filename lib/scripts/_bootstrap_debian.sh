@@ -2,7 +2,7 @@
 
 set -e
 
-rm -r "${HOME}/LIVE_BOOT/chroot"
+rm -rf "${HOME}/LIVE_BOOT/chroot"
 
 debootstrap \
   --arch=amd64 \
