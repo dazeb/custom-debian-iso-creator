@@ -1,11 +1,10 @@
 debian:
-  # You may have to change your package list depending on the Debian variant.
   release: bullseye
   apt:
-    # https://www.debian.org/mirror/list
+    bootstrap_cache_server_address:
+      cache:3142
     server_address:
       ftp.us.debian.org
-    # Any extra package lists beyond the standard apt repositories.
     lists:
       backports: |
         deb http://ftp.us.debian.org/debian bullseye-backports main non-free contrib
@@ -15,26 +14,25 @@ debian:
         deb-src http://ftp.us.debian.org/debian bullseye non-free contrib
       security: |
         # Nothing yet
-  packages:
-    standard: >
-      linux-image-amd64
-      live-boot
-      systemd-sysv
-      network-manager isc-dhcp-client net-tools iproute2 wireless-tools wpagui
-      curl openssh-client sudo firewalld
-      openbox lightdm xserver-xorg-core xserver-xorg xinit xterm i3lock xautolock
-      netcat socat nmap screen telnet ser2net can-utils
-      inetutils-ping thunar network-manager nano less firefox-esr gnome-screensaver
-      coreutils fdisk gparted cryptsetup testdisk pciutils
-      firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree amd64-microcode intel-microcode firmware-iwlwifi firmware-realtek firmware-ralink firmware-brcm80211 firmware-bnx2x firmware-atheros firmware-ath9k-htc
-      pixiewps aircrack-ng reaver wireshark tshark transmission-gtk hashcat john john-data wamerican-insane
-      xfce4-terminal git rsync geany patch python2 python3 nginx vim unzip build-essential git-lfs
-    # Download these to the live environment, but don't install them.
-    download_only: >
-      # These firmware installs fail if hardware doesn't align.
-      firmware-b43-installer firmware-ipw2x00
-    backports: >
-      # Nothing yet
+    packages:
+      standard: >
+        linux-image-amd64
+        live-boot
+        systemd-sysv
+        network-manager isc-dhcp-client net-tools iproute2 wireless-tools wpagui
+        curl openssh-client sudo firewalld
+        vlc
+        openbox lightdm xserver-xorg-core xserver-xorg xinit xterm i3lock xautolock
+        netcat socat nmap screen telnet ser2net can-utils
+        inetutils-ping thunar network-manager nano less firefox-esr gnome-screensaver
+        coreutils fdisk gparted cryptsetup testdisk pciutils
+        firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree amd64-microcode intel-microcode firmware-iwlwifi firmware-realtek firmware-ralink firmware-brcm80211 firmware-bnx2x firmware-atheros firmware-ath9k-htc
+        pixiewps aircrack-ng reaver wireshark tshark transmission-gtk hashcat john john-data wamerican-insane
+        xfce4-terminal git rsync geany patch python2 python3 nginx vim unzip build-essential git-lfs
+      download_only: >
+        firmware-b43-installer firmware-ipw2x00
+      backports: >
+        # Nothing yet
 user:
   name: myuser
   password: password
